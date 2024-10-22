@@ -1,8 +1,9 @@
 shebang := if os_family() == 'windows' {
 	'powershell'
 } else {
-	'sh'
+	'/bin/bash'
 }
+
 executable := if os_family() == 'windows' {
 	'Debug/demo.exe'
 } else {
@@ -22,7 +23,6 @@ build:
 
 clean:
 	rm -rf build
-	rm -rf build-demo
 
 cloc:
 	cloc . --exclude-dir="build" --exclude-dir="vcpkg_installed"

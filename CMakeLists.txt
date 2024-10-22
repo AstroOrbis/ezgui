@@ -3,6 +3,16 @@ set(CMAKE_CXX_STANDARD 23)
 
 option(BUILD_DEMO "Build demo" OFF)
 
+if (APPLE)
+	set(CMAKE_GENERATOR "Unix Makefiles")
+	set(VCPKG_TARGET_TRIPLET "arm64-osx" CACHE STRING "")
+elseif (WIN32)
+	set(CMAKE_C_COMPILER "cl")
+	set(CMAKE_CXX_COMPILER "cl")
+	set(CMAKE_GENERATOR "NMake Makefiles")
+	set(VCPKG_TARGET_TRIPLET "x64-windows" CACHE STRING "")
+endif()
+
 if(DEFINED ENV{VCPKG_DEFAULT_TRIPLET} AND NOT DEFINED VCPKG_TARGET_TRIPLET)
 	set(VCPKG_TARGET_TRIPLET "$ENV{VCPKG_DEFAULT_TRIPLET}" CACHE STRING "")
 endif()
@@ -23,5 +33,5 @@ target_link_libraries(ezgui PRIVATE SDL2::SDL2 imgui::imgui OpenGL::GL)
 
 if(BUILD_DEMO)
 	add_executable(demo "demo/main.cpp")
-	target_link_libraries(demo PRIVATE ezgui)
+	target_link_libraries(demo PRIVATE ezgui SDL2::SDL2 imgui::imgui OpenGL::GL)
 endif()

@@ -1,0 +1,9 @@
+{
+	"name": "ezgui",
+	"version": "0.1.0",
+	"dependencies": [
+		{"name": "imgui", "features": ["freetype", "sdl2-binding", "opengl3-binding", "docking-experimental"]},
+		"sdl2",
+		"opengl"
+	]
+}
