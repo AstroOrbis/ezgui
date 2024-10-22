@@ -7,7 +7,7 @@ highly encourage you to use ImGui directly - but this is good for use cases wher
 
 ## Dependencies
 
-ImGui, OpenGL3, and SDL2 are required.
+ImGui, OpenGL3, and SDL2 are required. In CMake, link these against both ezgui and your binary. VCPKG recommended!
 
 ## Usage
 
