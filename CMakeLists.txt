@@ -19,7 +19,7 @@ add_library(ezgui ${SOURCES})
 find_package(imgui CONFIG REQUIRED)
 find_package(SDL2 CONFIG REQUIRED)
 find_package(OpenGL REQUIRED)
-target_link_libraries(ezgui SDL2::SDL2 imgui::imgui OpenGL::GL)
+target_link_libraries(ezgui PRIVATE SDL2::SDL2 imgui::imgui OpenGL::GL)
 
 if(BUILD_DEMO)
 	add_executable(demo "demo/main.cpp")
