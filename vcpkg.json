@@ -1,0 +1,12 @@
+{
+	"name": "ezgui",
+	"version": "1.0.0",
+	"homepage": "https://github.com/astroorbis/ezgui",
+	"description": "EZ no-window ImGui!",
+	"license": "MIT",
+	"dependencies": [
+		{"name": "imgui", "features": ["freetype", "sdl2-binding", "opengl3-binding", "docking-experimental"]},
+		"sdl2",
+		"opengl"
+	]
+}
