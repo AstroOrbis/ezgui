@@ -34,8 +34,6 @@ public:
     }
 };
 
-// apparently SDL does `#define main SDL_main` so we gotta undefine it
-#undef main
 int main() {
     auto window1 = std::make_shared<Window1>();
     auto window2 = std::make_shared<Window2>();
